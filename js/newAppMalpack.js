@@ -654,7 +654,7 @@ $('.printSkidTags').click(function(){
 		if($.inArray(el, uniqueSkidIds) === -1) uniqueSkidIds.push(el);
 	});
 	console.log(uniqueSkidIds);
-	if(uniqueSkidIds.length > 1){
+	if(uniqueSkidIds.length >= 1){
 		//var skidIDs = uniqueSkidIds;
 		for(var i=0;i<uniqueSkidIds.length;i++){
 			var skidnumber = uniqueSkidIds[i]; 
