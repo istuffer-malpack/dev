@@ -1172,4 +1172,3 @@ $( ".dailyChecklistFormSubmit" ).click(function( e ) {
     });
 	resetDailyChecklistForm();
 });
-
