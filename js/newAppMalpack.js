@@ -1147,9 +1147,9 @@ $( ".dailyChecklistFormSubmit" ).click(function( e ) {
   $('.show-success-msg, .show-error-msg').css("display","none");
   //get values
   var line = $('#lineDropdown').find(':selected').val();
-  var question6 = ($('input[name="question6"]').hasClass('checked')) ? $('input[name="question6a"]:checked').val() : "";
+  var question6 = ($('input[name="question6"]').hasClass('checked')) ? $('input[name="question6a"].checked').val() : "";
   var question7 = ($('input[name="question7"]').hasClass('checked')) ? $('input[name="question7"]').val() : "";
-  var question8 = ($('input[name="question8"]').hasClass('checked')) ? $('input[name="question8a"]:checked').val() : "";
+  var question8 = ($('input[name="question8"]').hasClass('checked')) ? $('input[name="question8a"].checked').val() : "";
   var question9 = ($('input[name="question9"]').hasClass('checked')) ? $('input[name="question9"]').val() : "";
   var comment = $('textarea[name="comment"]').val();
   var submittedby = $('input[name="submitby"]').val();
