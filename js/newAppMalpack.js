@@ -1152,23 +1152,48 @@ $( ".dailyChecklistFormSubmit" ).click(function( e ) {
   var comment = $('textarea[name="comment"]').val();
   var submittedby = $('input[name="submitby"]').val();
   var shift = $('input[name="shift"]').val();
-  
+  var flagged = true;
   //console.log(line+" "+question6+" "+question7+" "+question8+" "+question9+" "+comment+" "+submittedby);  
 	var data = "line="+line+"&q6="+question6+"&q7="+question7+"&q8="+question8+"&q9="+question9+"&comment="+comment+"&submittedby="+submittedby+"&shift="+shift;
-  $.ajax({
-        url: 'https://script.google.com/macros/s/AKfycbza85RHYVyl8LGMN6lmqw_8AESHPZ5dVnqRnV00BQba24U4RRI/exec?fromForm=checklist&'+data,
-        type: 'get',
-        dataType: 'json',
-        success: function(data) {
-			if(data.result === "success"){
-				$('.show-success-msg').css("display","block");				
-				setTimeout(function(){$('.show-success-msg').css("display","none");}, 5000);
-				
-			}else{
-				$('.show-error-msg').css("display","block");				
-				setTimeout(function(){$('.show-error-msg').css("display","none");}, 5000);
+	//if(line != '' && question6 != '', )
+		if(question6 == undefined){
+			alert('Please select Die/Lip, Cast Roll Cleaning whether it is "Scheduled" or "Quality Issue".');
+			flagged = false;
+		}
+		if(question8 == undefined){
+			alert('Please select changed blades whether it is "New Blades" or "Flipped".');
+			flagged = false;
+		}
+		if(line == ''){
+			alert('Please select machine line.');
+			flagged = false;
+		}
+		if(submittedby == ''){
+			alert('Please enter operator name.');
+			flagged = false;
+		}
+		if(question6 == '' && question7 == '' && question8 == '' && question9 ==''){
+			alert('Please at least one of the item to be reported.');
+			flagged = false;
+		}
+		
+	if(flagged){
+		
+		$.ajax({
+			url: 'https://script.google.com/macros/s/AKfycbza85RHYVyl8LGMN6lmqw_8AESHPZ5dVnqRnV00BQba24U4RRI/exec?fromForm=checklist&'+data,
+			type: 'get',
+			dataType: 'json',
+			success: function(data) {
+				if(data.result === "success"){
+					$('.show-success-msg').css("display","block");				
+					setTimeout(function(){$('.show-success-msg').css("display","none");}, 5000);
+					resetDailyChecklistForm();
+				}else{
+					$('.show-error-msg').css("display","block");				
+					setTimeout(function(){$('.show-error-msg').css("display","none");}, 5000);
+				}
 			}
-        }
-    });
-	resetDailyChecklistForm();
+		});
+		
+	}
 });
