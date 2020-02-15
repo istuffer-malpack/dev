@@ -1138,10 +1138,11 @@ function resetDailyChecklistForm(){
 	$('#dailyChecklistForm label').removeClass('checkBoxChecked');
 	$('#dailyChecklistForm select, #dailyChecklistForm textarea, #dailyChecklistForm input[name="submitby"]').val('');
 }
+
 $('input[name="question6a"]').click(function(){$(this).next().trigger('click');});
 $('input[name="question8a"]').click(function(){$(this).next().trigger('click');});
-$( ".dailyChecklistFormSubmit" ).click(function( e ) {
- 
+
+$( ".dailyChecklistFormSubmit" ).click(function( e ) { 
   e.preventDefault();
   $('.show-success-msg, .show-error-msg').css("display","none");
   //get values
