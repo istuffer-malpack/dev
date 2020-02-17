@@ -1175,7 +1175,7 @@ $( ".dailyChecklistFormSubmit" ).click(function( e ) {
 			flagged = false;
 		}
 		if(question6 == '' && question7 == '' && question8 == '' && question9 ==''){
-			alert('Please at least one of the item to be reported.');
+			alert('Please at least one of the items to be reported.');
 			flagged = false;
 		}
 		
