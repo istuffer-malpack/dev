@@ -42,7 +42,7 @@ app.factory("overviewService", function($http) {
 	  return $http.get("https://script.google.com/macros/s/AKfycbzBwYZnMhmw1DyK6QApwYFjUJxvlozt_mB31TiG_3ZZARQK9ip8/exec?id=1AfeXWTxKkcTcIp_JUj_GENl8STchqU1ncXMmNAPYMyg&sheet=skidtags");  
   };
     
-  service.machineLines = ['LINE 1', 'LINE 2', 'LINE 3', 'LINE 4', 'LINE 5', 'LINE 6', 'LINE 7', 'LINE 8']
+  service.machineLines = ['LINE 1', 'LINE 2', 'LINE 3', 'LINE 4', 'LINE 5', 'LINE 6', 'LINE 7', 'LINE 8','LINE 9']
 
   return service;
 });
@@ -480,13 +480,14 @@ app.controller("overviewController", [ "$scope","$log","$interval","$timeout","$
 						 
 			//var modal = document.getElementById("chartModal");
 			//			modal.style.display = "block";			
-				test();	 
+				
 		};
 				
 		//$scope.showChart('AX-M-041','LINE 8');	
 		$timeout(function () {
 			//$log.log("test");
 			$scope.showDefectChart('LINE 1');
+
 		}, 6000);
 			
    $scope.filterLine = function(x) {   
@@ -646,15 +647,15 @@ $('.printSkidTags').click(function(){
 	var skidIdtags = $('.skidIDtags').val();
 	
 	$('#printSkids').html("");
-	//console.log(skidIdtags);
+	//console.log(skidId);
 	var skidIDs = new Array();
 	skidIDs = skidIdtags.split(',');
 	var uniqueSkidIds = [];
 	$.each(skidIDs, function(i, el){
 		if($.inArray(el, uniqueSkidIds) === -1) uniqueSkidIds.push(el);
 	});
-	console.log(uniqueSkidIds);
-	if(uniqueSkidIds.length >= 1){
+	//console.log(skidIDs);
+	if(uniqueSkidIds.length > 1){
 		//var skidIDs = uniqueSkidIds;
 		for(var i=0;i<uniqueSkidIds.length;i++){
 			var skidnumber = uniqueSkidIds[i]; 
@@ -692,7 +693,8 @@ $('.printSkidTags').click(function(){
 			var skids = 0;
 			var totalskids = (skidEnd - skidStart) + 1;
 			var skidnumber = skidStart;
-			for(var i=0;i<skids;i++){
+				console.log(totalskids);
+			for(var i=0;i<totalskids;i++){
 				htmlContent = '<div class="bc-div" style="width: 100%;display:block;">'+
 									  '<p class="bcodelabel"><span style="float:left;margin-left:50px;">'+skidnumber+'</span><span style="float:right;margin-right:0px;">'+skidId.replace(/-/g,"")+'</span></p>'+
 									  '<img class="barcode'+skidnumber+' barcode" style="display:block;margin:0 40px;width:100%;"/>'+
@@ -719,18 +721,17 @@ $('.printSkidTags').click(function(){
 			
 			noOfCopies = skids;
 			
+			
+			setTimeout(function(){			
+				$('#printSkids').printElem('skidTags',noOfCopies,orderNumber,localStorage.shift,"skidTagPrint"); 		
+				//var modal = document.getElementById("skidTagPrint");
+			},800);
+			
+			
 		}else{
 			alert("Please enter skid id number!");
-		}
-		
-		
+		}	
 	}
-		
-	setTimeout(function(){			
-		$('#printSkids').printElem('skidTags',noOfCopies,orderNumber,localStorage.shift,"skidTagPrint"); 		
-		//var modal = document.getElementById("skidTagPrint");
-	},800);
-	
 });
 
 function printSkidLabel(ele){
