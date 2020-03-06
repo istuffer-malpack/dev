@@ -1,5 +1,5 @@
 //localStorage.shift = "Ramin/Shift A";
-var machineLines = ['LINE 1', 'LINE 2', 'LINE 3', 'LINE 4', 'LINE 5', 'LINE 6', 'LINE 7', 'LINE 8'];
+var machineLines = ['LINE 1', 'LINE 2', 'LINE 3', 'LINE 4', 'LINE 5', 'LINE 6', 'LINE 7', 'LINE 8','LINE 9'];
 
 var app = angular.module("app", ["chart.js"]);
 
