@@ -1,5 +1,5 @@
 //localStorage.shift = "Ramin/Shift A";
-var machineLines = ['LINE 1', 'LINE 2', 'LINE 3', 'LINE 4', 'LINE 5', 'LINE 6', 'LINE 7', 'LINE 8','LINE 9'];
+var machineLines = ['LINE 1', 'LINE 2', 'LINE 3', 'LINE 4', 'LINE 5', 'LINE 6', 'LINE 7', 'LINE 8'];
 
 var app = angular.module("app", ["chart.js"]);
 
@@ -654,8 +654,9 @@ $('.printSkidTags').click(function(){
 	$.each(skidIDs, function(i, el){
 		if($.inArray(el, uniqueSkidIds) === -1) uniqueSkidIds.push(el);
 	});
-	//console.log(skidIDs);
+	//console.log(skidIdtags);
 	if(uniqueSkidIds.length > 1){
+		console.log(uniqueSkidIds.length);
 		//var skidIDs = uniqueSkidIds;
 		for(var i=0;i<uniqueSkidIds.length;i++){
 			var skidnumber = uniqueSkidIds[i]; 
@@ -685,6 +686,11 @@ $('.printSkidTags').click(function(){
 		}
 		noOfCopies = uniqueSkidIds.length;
 		
+		setTimeout(function(){			
+				$('#printSkids').printElem('skidTags',noOfCopies,orderNumber,localStorage.shift,"skidTagPrint"); 		
+				//var modal = document.getElementById("skidTagPrint");
+			},1000);
+		
 	}else{
 		var skidEnd = $('.skidIdTo').val();			
 		var skidStart = $('.skidIdFrom').val();	
@@ -693,7 +699,7 @@ $('.printSkidTags').click(function(){
 			var skids = 0;
 			var totalskids = (skidEnd - skidStart) + 1;
 			var skidnumber = skidStart;
-				console.log(totalskids);
+				//console.log(totalskids);
 			for(var i=0;i<totalskids;i++){
 				htmlContent = '<div class="bc-div" style="width: 100%;display:block;">'+
 									  '<p class="bcodelabel"><span style="float:left;margin-left:50px;">'+skidnumber+'</span><span style="float:right;margin-right:0px;">'+skidId.replace(/-/g,"")+'</span></p>'+
@@ -725,7 +731,7 @@ $('.printSkidTags').click(function(){
 			setTimeout(function(){			
 				$('#printSkids').printElem('skidTags',noOfCopies,orderNumber,localStorage.shift,"skidTagPrint"); 		
 				//var modal = document.getElementById("skidTagPrint");
-			},800);
+			},1000);
 			
 			
 		}else{
