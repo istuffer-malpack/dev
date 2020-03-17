@@ -789,7 +789,7 @@ for(var i=0;i<totalskid;i++){
 						'<div class="section" style="position:relative;">'+
 							'<div class="lot-box" style="position: relative;left: 0;margin: 10px auto;">'+
 								'<h3>Lot Number:</h3>'+
-								'<h5>'+ctag+'  <span>19</span></h5>'+
+								'<h5>'+ctag+'  <span>20</span></h5>'+
 							'</div>'+							
 							'<div class="middle-section">'+
 								'<p class="big" style="font-size:75px; line-height:1.2;">P.O.#'+ponum+'</p>'+							
@@ -848,7 +848,7 @@ for(var i=0;i<totalskid;i++){
 							'<div class="section" style="position:relative;">'+			
 									'<div class="lot-box" style="position: relative;left: 0;margin: 10px auto;">'+
 										'<h3>Lot Number:</h3>'+
-										'<h5>'+ctag  +'<span>19</span></h5>'+
+										'<h5>'+ctag  +'<span>20</span></h5>'+
 									'</div>'+			
 								'<div class="middle-section">'+
 									'<p class="big">P.O.#'+ponum+'</p>'+				
@@ -904,7 +904,7 @@ for(var i=0;i<totalskid;i++){
 					'<div class="section" style="position:relative;">'+			
 							'<div class="lot-box">'+
 								'<h3>Lot Number:</h3>'+
-								'<h5>'+ctag+  '<span>19</span></h5>'+
+								'<h5>'+ctag+  '<span>20</span></h5>'+
 							'</div>'+			
 						'<div class="middle-section">'+
 							'<p class="big">'+ qty +' '+ uom +'/SKID</p>'+				
