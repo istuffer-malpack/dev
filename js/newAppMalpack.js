@@ -662,10 +662,10 @@ $('.printSkidTags').click(function(){
 			var skidnumber = uniqueSkidIds[i]; 
 				
 					htmlContent = '<div class="bc-div" style="width: 100%;display:block;">'+
-									'<p class="bcodelabel"><span style="float:left;margin-left:50px;">'+skidnumber+'</span><span style="float:right;margin-right:0px;">'+skidId.replace(/-/g,"")+'</span></p>'+
+									'<p class="bcodelabel"><span style="float:left;margin-left:40px;">'+skidnumber+'</span><span style="float:right;margin-right:-25px;">'+skidId.replace(/-/g,"")+'</span></p>'+
 									'<img class="barcode'+skidnumber+' barcode" style="display:block;margin:0 40px;width:100%;"/>'+
-									'<p style="text-align:center;margin: 5px 0 0;color: #000;font-size: 38px;line-height: 1.5rem;font-family: arial;font-weight: 700;">MADE IN CANADA</p>'+
-									'<p style="width:100%;text-align:right;margin-top:200px;color: #000;font-size:40px;font-family: arial;font-weight:700;margin-bottom:0;">'+(i + 1)+' of '+ uniqueSkidIds.length +'</p>'+
+									'<p style="text-align:center;margin: 10px 0 0 50px;color: #000;font-size: 32px;line-height: 1.25rem;font-family: arial;font-weight: 400;">MADE IN CANADA</p>'+
+									'<p style="width:100%;text-align:right;margin-top:250px;color: #000;font-size:40px;font-family: arial;font-weight:700;margin-bottom:0;">'+(i + 1)+' of '+ uniqueSkidIds.length +'</p>'+
 									'</div>';				  
 					
 				$('#printSkids').append(htmlContent);
@@ -674,11 +674,11 @@ $('.printSkidTags').click(function(){
 				{
 					format: "code39",
 					font: "arial",
-					fontSize: 40,
+					fontSize: 35,
 					textMargin: 0,
 					text: skidnumber,
 					width: 10,
-					height:300,
+					height: 250,
 					displayValue: false	
 				});
 								
@@ -702,10 +702,10 @@ $('.printSkidTags').click(function(){
 				//console.log(totalskids);
 			for(var i=0;i<totalskids;i++){
 				htmlContent = '<div class="bc-div" style="width: 100%;display:block;">'+
-									  '<p class="bcodelabel"><span style="float:left;margin-left:50px;">'+skidnumber+'</span><span style="float:right;margin-right:0px;">'+skidId.replace(/-/g,"")+'</span></p>'+
+									  '<p class="bcodelabel"><span style="float:left;margin-left:40px;">'+skidnumber+'</span><span style="float:right;margin-right:-25px;">'+skidId.replace(/-/g,"")+'</span></p>'+
 									  '<img class="barcode'+skidnumber+' barcode" style="display:block;margin:0 40px;width:100%;"/>'+
-									  '<p style="text-align:center;margin: 5px 0 0;color: #000;font-size: 38px;line-height: 1.5rem;font-family: arial;font-weight: 700;">MADE IN CANADA</p>'+
-									  '<p style="width:100%;text-align:right;margin-top:200px;color: #000;font-size:40px;font-family: arial;font-weight:700;margin-bottom:0;">'+(i + 1)+' of '+ totalskids +'</p>'+
+									  '<p style="text-align:center;margin: 5px 0 50px;padding-left:25px;color: #000;font-size: 32px;line-height: 1.25rem;font-family: arial;font-weight: 400;">MADE IN CANADA</p>'+
+									  '<p style="width:100%;text-align:right;margin-top:200px;color: #000;font-size:38px;font-family: arial;font-weight:700;margin-bottom:0;">'+(i + 1)+' of '+ totalskids +'</p>'+
 									'</div>';				  
 					
 					$('#printSkids').append(htmlContent);
@@ -714,11 +714,11 @@ $('.printSkidTags').click(function(){
 									{
 										format: "code39",
 										  font: "arial",
-										  fontSize: 40,
+										  fontSize: 35,
 										  textMargin: 0,
-										  text: "1335376",
+										  text: skidnumber,
 										  width: 10,
-										  height:300,
+										  height: 250,
 										  displayValue: false	
 									});
 									
@@ -1089,9 +1089,9 @@ jQuery.fn.extend({
     style = document.createElement('style');
 	 
 	 if(a == 'skidTags'){ 
-		css = '@page { size: 11in 8.5in; margin-top: 5cm;}body{width:920px;height: 650px;}';
+		css = '@page { size: 11in 8.5in; margin-top: 5cm;}body{width:920px;height: 500px;}';
 	 }else if(a == 'skidLabel'){
-		 css = '@page { size: 11in 8.5in;margin:15mm 15mm;}body{width:980px;height: 650px;color:#000;font-family:"Times New Roman;"}.h1{font-size:60px;font-weight:700;margin:0;line-height:1.1}.h2{font-size:55px;font-weight:700;margin:0}h3{font-weight:700}h5{font-size:1.5em;margin:10px}h5 span{padding-left:15px}.product-logo{padding-top:0px}.product-logo img{margin-top:5px;height:140px;display:block;margin:5px auto}.lot-box{width:250px;padding:10px;border-style:double;position:absolute;left:10px}.big{font-size:50px;font-weight:700;margin:0}.small{font-size:30px;margin:0;font-weight:700;line-height:30px}.page-count{width:150px;position:absolute;right:50px;bottom:50px}.page-count span{display:block;border:1px #000 solid;padding:5px;font-size:50px;font-weight:700}.footer img{height:90px;display:block;margin:20px auto;width:65%}';
+		 css = '@page { size: 11in 8.5in;margin:15mm 15mm;}body{width:980px;height: auto;color:#000;font-family:"Times New Roman;"}.h1{font-size:60px;font-weight:700;margin:0;line-height:1.1}.h2{font-size:55px;font-weight:700;margin:0}h3{font-weight:700}h5{font-size:1.5em;margin:10px}h5 span{padding-left:15px}.product-logo{padding-top:0px}.product-logo img{margin-top:5px;height:140px;display:block;margin:5px auto}.lot-box{width:250px;padding:10px;border-style:double;position:absolute;left:10px}.big{font-size:50px;font-weight:700;margin:0}.small{font-size:30px;margin:0;font-weight:700;line-height:30px}.page-count{width:150px;position:absolute;right:50px;bottom:50px}.page-count span{display:block;border:1px #000 solid;padding:5px;font-size:50px;font-weight:700}.footer img{height:90px;display:block;margin:20px auto;width:65%}';
 	 }
 
 	style.type = 'text/css';
