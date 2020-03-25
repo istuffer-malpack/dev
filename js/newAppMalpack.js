@@ -665,7 +665,7 @@ $('.printSkidTags').click(function(){
 									'<p class="bcodelabel"><span style="float:left;margin-left:40px;">'+skidnumber+'</span><span style="float:right;margin-right:-25px;">'+skidId.replace(/-/g,"")+'</span></p>'+
 									'<img class="barcode'+skidnumber+' barcode" style="display:block;margin:0 40px;width:100%;"/>'+
 									'<p style="text-align:center;margin: 10px 0 0 50px;color: #000;font-size: 32px;line-height: 1.25rem;font-family: arial;font-weight: 400;">MADE IN CANADA</p>'+
-									'<p style="width:100%;text-align:right;margin-top:250px;color: #000;font-size:40px;font-family: arial;font-weight:700;margin-bottom:0;">'+(i + 1)+' of '+ uniqueSkidIds.length +'</p>'+
+									'<p style="width:100%;text-align:right;margin-top:230px;color: #000;font-size:40px;font-family: arial;font-weight:700;margin-bottom:0;">'+(i + 1)+' of '+ uniqueSkidIds.length +'</p>'+
 									'</div>';				  
 					
 				$('#printSkids').append(htmlContent);
