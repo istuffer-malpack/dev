@@ -303,7 +303,6 @@ input[type="radio"]:before {
   border: 1px solid #808080;
   border-radius: 50%;
   content: "";
-  background: #FFF;
 }
 input[type="radio"]:after {
   position: relative;
