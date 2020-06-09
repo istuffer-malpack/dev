@@ -80,7 +80,7 @@
 				(function() {
 				   
 					$.ajax({
-						url: 'https://script.google.com/a/malpack.ca/macros/s/AKfycbzIp9LKyA08fp-OpkzHiWud53ef1lE0hvulIx7FZ4OmrIDTUis/exec?id=1VxeeYM53wwdnwy-y-Y_yH12YkJa1LtEjxuFTj7IqLQY&sheet=sched',
+						url: 'https://script.google.com/macros/s/AKfycbzyStkxfw6osBed6WLbQrdDjv60ukrqxZha1GNnBry3enVXZz88/exec?id=1X9U7ZHQcm6XW6C7qvPOFSVG2YU8qvN-q-Gt2Q_50yT4&sheet=schedData',
 						type: 'get',
 						dataType: 'json',
 						success: function(data) {
@@ -100,12 +100,12 @@
 						var end = new Date(productionSchedule[i].END);
 						var options = { month: "short", day: "2-digit", hour: "2-digit", minute: "2-digit" };
 						
-						var line = productionSchedule[i].LINE;
-						var product = productionSchedule[i].PRODUCTID;
-						var customer = productionSchedule[i].CUSTOMER_NAME;
-						var order = productionSchedule[i].ORDER;
-						var po = productionSchedule[i].PO;
-						var totalskid = productionSchedule[i].TOTALSKID;
+						var line = productionSchedule[i].SCHEDULED_LINE;
+						var product = productionSchedule[i].PRODUCT_ID;
+						var customer = productionSchedule[i].CUSTOMERNAME;
+						var order = productionSchedule[i].ORDER_NUMBER;
+						var po = productionSchedule[i].ORDER_PO_NUMBER;
+						var totalskid = productionSchedule[i].SKID_QTY;
 						var targetwt = productionSchedule[i].ROLL_WT;
 						var coresize = productionSchedule[i].CORE_SIZE;
 						var pallet = productionSchedule[i].PALLET_SIZE;
