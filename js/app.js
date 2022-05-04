@@ -5,19 +5,19 @@ app.factory("overviewService", function($http) {
   var gUrl = "https://script.google.com/macros/s/AKfycby0ogE4p9Yj9Ke9OpZExmHB7silCuLW0McKcjFuYC76tHyhu4A/exec?sheet=";
 
 	service.getAllOrders = function(){
-		return $http.get('http://10.4.3.15:8080/api/PSOrder/');
+		return $http.get('https://10.4.3.15:8080/api/PSOrder/');
 	};
 	service.getAllQcData = function() {
 		return $http.get(gUrl + "QC_IMPORT");
     };
 	service.getBarcodes = function(){
-		return $http.get('http://10.4.3.15:8081/api/BarcodeOrders/');
+		return $http.get('https://10.4.3.15:8081/api/BarcodeOrders/');
 	};	
 	service.getBom = function(){
 		return $http.get(gUrl + "bom");
 	};
 	service.getStartStop = function(){
-		return $http.get('http://10.4.3.15:8083/api/ProdStatus');
+		return $http.get('https://10.4.3.15:8083/api/ProdStatus');
 	};
 	service.getProductRecipe = function(){
 		return $http.get(gUrl + "recipeCode");
